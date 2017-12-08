@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -15,6 +16,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                build job: 'echo'
+                parameters([string(name: 'name1', Value: 'nileshexperiments')])
             }
         }
     }
